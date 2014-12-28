@@ -1,9 +1,8 @@
-var height = 16; 
-var width = 16;
+var height = 16;
 
 $(document).ready(function(){
 	
-	makegrid(height, width);
+	makegrid(height);
 	
 	
 	$('.button').hover(
@@ -18,18 +17,17 @@ $(document).ready(function(){
 	$('.button').click(function(){
 		$('.start').remove();
 		height = prompt("Choose height of etch-sketch:"); 
-		width = prompt("Choose width of etch-sketch:");
 		$('#wrap').append('<div class = "start"></div>');
-		makegrid(height, width);
+		makegrid(height);
 	});
 
 });
 
-function makegrid(height, width) {
+function makegrid(height) {
 	var len = Math.floor(800/(height)); 
 	len = (len - 4); 
 	for (var i = 0; i < height; i++) {
-		for (var j = 0; j < width; j++) {
+		for (var j = 0; j < height; j++) {
 			$('.start').append('<div class = "pixel"></div>');
 			
 			$('.pixel').css({"height":len+"px"}); 
